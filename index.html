@@ -9,8 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="container mx-auto mt-10 px-10 ">
-    <header>
+<body >
+    <header class="container mx-auto mt-10 px-10 ">
         <nav>
             <div class="navbar bg-base-100 justify-center items-center ">
                 <div class="navbar-start">
@@ -42,7 +42,7 @@
             </div>
            
     </header>
-    <main class="mt-20">
+    <main class="container mx-auto mt-10 px-10 ">
         <div class="flex flex-col justify-center items-center text-center space-y-3">
         <p class="font-black text-4xl">Adopt  Your  Best Friend</p>
         <p>It is a long established fact that a reader will be distracted by the readable content of a page <br> when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
@@ -71,8 +71,8 @@
         <button class="bg-[#0E7A81] px-4 py-1 text-white rounded-2xl">Sort by Price</button>
     </div>
 
-    <div class="mt-10  border border-red-900 flex flex-row justify-between gap-3">
-        <div class="border border-">
+    <div class="mt-10  flex flex-row justify-between gap-3">
+        <div class="border border-[#0E7A8126] px-3 py-1">
             <img src="./images/Rectangle 1.png" alt="">
             <p class="mt-4">Mister Tartosh</p>
             <div class="mt-2 space-y-2">
@@ -104,7 +104,7 @@
             
         </div>
 
-        <div>
+        <div class="border border-[#0E7A8126] px-3 py-1">
             <img src="./images/Rectangle 1.png" alt="">
             <p class="mt-4">Mister Tartosh</p>
             <div class="mt-2 space-y-2">
@@ -136,7 +136,7 @@
             
         </div>
 
-        <div>
+        <div class="border border-[#0E7A8126] px-3 py-1">
             <img src="./images/Rectangle 1.png" alt="">
             <p class="mt-4">Mister Tartosh</p>
             <div class="mt-2 space-y-2">
@@ -179,7 +179,42 @@
 
     </div>
     </main>
-    <footer></footer>
+    <footer class="bg-[#131313] ">
+        <div class="container mx-auto mt-10 px-6">
+            <div class="flex flex-row justify-between px-10 py-20">
+                <div>
+                    <a class="btn btn-ghost text-xl text-white">
+                        <img src="./images/Group 1.png" alt="">
+                        Peddy</a>
+                    <p class="text-white">Location: av. Washington 165, NY CA 54003 </p>
+                    <p class="text-white">Phone: +31 85 964 47 25</p> 
+                    <p class="text-white">Email: info@yourdomain.com</p>   
+                    <p class="text-white">Openings hours: 9.00 AM - 5.00 PM</p> 
+                </div>
+    
+                <div>
+                    <p class="text-white">Useful Links</p>
+                    <ul class="text-[#FFFFFF99]">
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Animal</li>
+                    <li>Foundation</li>
+                    <li>Contact</li>
+                    </ul>
+                    
+                </div>
+    
+                <div class="flex flex-col space-y-2">
+                    <p class="text-white">Drop Message</p>
+                    <input class="bg-[#FFFFFF0D] px-4 py-2 rounded-lg" type="email" name="" id="" placeholder="Enter email">
+                    <button class="bg-[#0E7A81] text-white px-4 py-2 rounded-lg">Subscribe</button>
+                </div>
+            </div>
+            
+           
+        </div>
+
+    </footer>
 
     <script src="./js/app.js"></script>
 </body>
