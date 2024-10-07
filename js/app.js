@@ -11,31 +11,28 @@ const displayitems = items =>{
     const allitems=document.getElementById("all_items");
     items.forEach(item =>{
         console.log(item);
-    })
-
-  
-    const div1=document.createElement('div');
-    div1.classList=`mt-10  flex flex-row justify-between gap-3`;
-    div1.innerHTML=`
+        const itemcard=document.createElement('div');
+    itemcard.classList=`mt-10 gap-3`;
+   itemcard.innerHTML=`
      <div class="border border-[#0E7A8126] px-3 py-1">
-            
-            <p class="mt-4">Mister Tartosh</p>
+            <img class="w-96 rounded-xl" src="${item.image}" alt="">
+            <p class="mt-4">"${item.pet_name}"</p>
             <div class="mt-2 space-y-2">
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame.jpg" alt="">
-                    <p><span>Breed:</span>  Golder retriever</p>
+                    <p><span>Breed:</span>"${item.breed}"</p>
                 </div>
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame (1).png" alt="">
-                    <p><span>Birth:</span>2024</p>
+                    <p><span>Birth:</span>"${item.date_of_birth}"</p>
                 </div>
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame (2).png" alt="">
-                    <p><span>Gender:</span> Female</p>
+                    <p><span>Gender:</span> "${item.gender}"</p>
                 </div>
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame (3).png" alt="">
-                    <p><span>Price:</span> 199$</p>
+                    <p><span>Price:</span> "${item.price}"</p>
                 </div>
             </div>
             <hr class="mt-3">
@@ -52,7 +49,11 @@ const displayitems = items =>{
     
     `
 
-   allitems.appendChild(div1);
+   allitems.appendChild(itemcard);
+    })
+
+  
+    
 
 
 }
