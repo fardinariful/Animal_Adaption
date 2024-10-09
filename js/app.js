@@ -13,26 +13,32 @@ const displayitems = items =>{
         console.log(item);
         const itemcard=document.createElement('div');
     itemcard.classList=`mt-10 gap-3`;
+    const petName = item.pet_name ? item.pet_name : "Name not available";
+    const breed = item.breed ? item.breed : "Breed not available";
+    const birthDate = item.date_of_birth ? item.date_of_birth : "Birth date not available";
+    const gender = item.gender ? item.gender : "Gender not specified";
+    const price = item.price ? item.price : "Price not available";
+    const image = item.image ? item.image : "./images/placeholder.png";  
    itemcard.innerHTML=`
      <div class="border border-[#0E7A8126] px-3 py-1">
-            <img class="w-96 rounded-xl" src="${item.image}" alt="">
-            <p class="mt-4">"${item.pet_name}"</p>
+            <img class="w-96 rounded-xl" src="${image}" alt="">
+            <p class="mt-4">"${petName}"</p>
             <div class="mt-2 space-y-2">
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame.jpg" alt="">
-                    <p><span>Breed:</span>"${item.breed}"</p>
+                    <p><span>Breed:</span>"${breed}"</p>
                 </div>
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame (1).png" alt="">
-                    <p><span>Birth:</span>"${item.date_of_birth}"</p>
+                    <p><span>Birth:</span>"${birthDate}"</p>
                 </div>
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame (2).png" alt="">
-                    <p><span>Gender:</span> "${item.gender}"</p>
+                    <p><span>Gender:</span> "${gender}"</p>
                 </div>
                 <div class="flex flex-row gap-2">
                     <img src="./images/Frame (3).png" alt="">
-                    <p><span>Price:</span> "${item.price}"</p>
+                    <p><span>Price:</span> "${price}"</p>
                 </div>
             </div>
             <hr class="mt-3">
@@ -58,6 +64,8 @@ const displayitems = items =>{
 
 }
 
-
+const categorySearch =()=>{
+    
+}
 
 allpet();
