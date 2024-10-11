@@ -1,3 +1,32 @@
+const load4Categories =async () =>{
+    const resp1=await fetch("https://openapi.programming-hero.com/api/peddy/categories");
+    const data1=await resp1.json();
+    display4Categories (data1.categories);
+
+}
+
+const display4Categories = (categories) =>{
+    const btncontainer=document.getElementById("button_container");
+    categories.forEach(categorys=>{
+        console.log(categorys);
+
+        const divcontainer=document.createElement('div');
+        divcontainer.classList=`flex flex-row justify-between mt-10`;
+        const button1=document.createElement('button');
+        button1.classList=`flex flex-row justify-center items-center gap-3 px-10 py-2 border border-[#0E7A8126] rounded-3xl`;
+        button1.innerHTML=`
+
+        <img class="w-8" src="${categorys.category_icon}" alt="">
+        "${categorys.category}"
+        `;
+        divcontainer.appendChild(button1);
+        btncontainer.appendChild(divcontainer);
+    })
+}
+
+load4Categories();
+
+
 const allpet = async() =>{
     const resp = await fetch("https://openapi.programming-hero.com/api/peddy/pets");
     const data=await resp.json();
@@ -11,6 +40,7 @@ const displayitems = items =>{
     const allitems=document.getElementById("all_items");
     items.forEach(item =>{
         console.log(item);
+        
         const itemcard=document.createElement('div');
     itemcard.classList=`mt-10 gap-3`;
     const petName = item.pet_name ? item.pet_name : "Name not available";
@@ -51,21 +81,17 @@ const displayitems = items =>{
             </div>
             
         </div>
-    
-    
     `
 
    allitems.appendChild(itemcard);
+
     })
 
-  
-    
-
-
+   
 }
 
-const categorySearch =()=>{
-    
-}
+
+
+
 
 allpet();
