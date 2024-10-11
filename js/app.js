@@ -44,6 +44,17 @@ const displayitems = items =>{
     //console.log(items);
     const allitems=document.getElementById("all_items");
     allitems.innerHTML=" ";
+    if(items.length == 0){
+        allitems.classList.remove('grid')
+        allitems.innerHTML=`
+        <div class="flex flex-col justify-center space-y-2 items-center text-center px-20 py-10 bg-[#13131308] mt-10 rounded-xl">
+         <img src="./images/no-data 1.png" alt="">
+       <p>No Information Available</p>
+       <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+        </div>
+      
+        `
+    }
     items.forEach(item =>{
         console.log(item);
         
