@@ -94,10 +94,10 @@ const displayitems = items =>{
             </div>
             <hr class="mt-3">
             <div class="flex flex-row justify-between items-center mt-3">
-                <button class="border border-[#13131399] px-3 py-1 rounded-xl">
+                <button onclick="likepet()" class="border border-[#13131399] px-3 py-1 rounded-xl">
                     <img src="./images/Frame (4).png" alt="">
                 </button>
-                <button  class="border border-[#13131399] px-3 py-1 text-[#0E7A81] font-medium rounded-xl">Adopt</button>
+                <button  class="adopt-btn border border-[#13131399] px-3 py-1 text-[#0E7A81] font-medium rounded-xl">Adopt</button>
                 <button onclick="showdetails('${item.petId}')"  class="border border-[#13131399] px-3 py-1 text-[#0E7A81] font-medium rounded-xl">Details</button>
             </div>
             
@@ -108,7 +108,7 @@ const displayitems = items =>{
 
     })
 
-   
+    getAllAdoptButtons();
 }
 
 
@@ -173,5 +173,24 @@ const showpetdetails =(ph)=>{
       showdetailsss.showModal();
 
 }
+
+const likepet = () =>{
+    console.log("i like it");
+}
+
+
+// Function to get all "Adopt" buttons
+const getAllAdoptButtons = () => {
+    const adoptButtons = document.querySelectorAll('.adopt-btn'); // Assuming you add 'adopt-btn' class to each Adopt button
+    adoptButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            console.log(e.target.innerText="Adopted");
+            // Perform any additional actions here, like triggering the adoption process
+        });
+    });
+};
+
+// Call this function after dynamically generating buttons (e.g., after displaying items)
+
 
 allpet();
