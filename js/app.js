@@ -13,7 +13,7 @@ const display4Categories = (categories) => {
         const divcontainer = document.createElement('div');
         divcontainer.classList = `flex flex-row justify-between mt-10`;
         divcontainer.innerHTML = `
-         <button onclick="loadpetcategory('${categorys.category}')" class="btn flex flex-row justify-center items-center gap-3 px-10 py-2 border border-[#0E7A8126] rounded-3xl"> 
+         <button onclick="loadpetcategory('${categorys.category}');handler()"  class="btn flex flex-row justify-center items-center gap-3 px-10 py-2 border border-[#0E7A8126] rounded-3xl"> 
           <img class="w-8" src="${categorys.category_icon}" alt="">
         "${categorys.category}"
          </button> 
@@ -209,7 +209,26 @@ const getAllAdoptButtons = () => {
     });
 };
 
-// Call this function after dynamically generating buttons (e.g., after displaying items)
+const handler = () =>
+    {
+        toggleloading(true);
+        setTimeout(() => {
+            toggleloading(false); // Hide the spinner after loading finishes
+        }, 500); // Example: Hide after 3 seconds
+
+        
+    }
+    
+    const toggleloading = (isloading) =>{
+     const loadingbtn=document.getElementById('loading-spinner');
+     if(isloading)
+     {
+        loadingbtn.classList.remove('hidden');
+    }
+     else{
+        loadingbtn.classList.add('hidden');
+    }
+     }
 
 
 allpet();
