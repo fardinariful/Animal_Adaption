@@ -55,6 +55,10 @@ const displayitems = items =>{
       
         `
     }
+
+    else{
+        allitems.classList.add("grid");
+    }
     items.forEach(item =>{
         console.log(item);
         
