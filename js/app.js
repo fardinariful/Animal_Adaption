@@ -127,32 +127,39 @@ const showpetdetails =(ph)=>{
 
     
       const petdetailscontainer=document.getElementById("pet_details_container");
+     const petName = ph.pet_name ? ph.pet_name : "Name not available";
+     const breed = ph.breed ? ph.breed : "Breed not available";
+     const birthDate = ph.date_of_birth ? ph.date_of_birth : "Birth date not available";
+     const gender = ph.gender ? ph.gender : "Gender not specified";
+     const price = ph.price ? ph.price : "Price not available";
+     const image = ph.image ? ph.image : "./images/placeholder.png";  
+     const vaccinated_status=ph.vaccinated_status? ph.vaccinated_status:"Vaccine status not available"
       petdetailscontainer.innerHTML=`
-    <img class="w-full" src="./images/Rectangle 1.png" alt="">
-    <h3 class="text-lg font-bold">"${ph.pet_name}"</h3>
+    <img class="w-full" src="${image}" alt="">
+    <h3 class="text-lg font-bold">"${petName}"</h3>
     <div class="mt-2 space-y-2 flex flex-row justify-between">
      <div class="flex flex-col space-y-2">
          <div class="flex flex-row gap-2">
              <img src="./images/Frame.jpg" alt="">
-             <p><span>Breed:</span>"${ph.breed}"</p>
+             <p><span>Breed:</span>"${breed}"</p>
          </div>
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (2).png" alt="">
-             <p><span>Gender:</span> "${ph.gender}"</p>
+             <p><span>Gender:</span> "${gender}"</p>
          </div>
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (2).png" alt="">
-             <p><span>Vaccinated status:</span> "${ph.vaccinated_status}"</p>
+             <p><span>Vaccinated status:</span> "${vaccinated_status}"</p>
          </div>
      </div>
      <div class="flex flex-col space-y-2">
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (1).png" alt="">
-             <p><span>Birth:</span>"${ph.birthDate}"</p>
+             <p><span>Birth:</span>"${birthDate}"</p>
          </div>
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (3).png" alt="">
-             <p><span>Price:</span> "${ph.price}"</p>
+             <p><span>Price:</span> "${price}"</p>
          </div>
      </div>
      
