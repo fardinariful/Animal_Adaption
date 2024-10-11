@@ -98,7 +98,7 @@ const displayitems = items =>{
                     <img src="./images/Frame (4).png" alt="">
                 </button>
                 <button  class="border border-[#13131399] px-3 py-1 text-[#0E7A81] font-medium rounded-xl">Adopt</button>
-                <button  class="border border-[#13131399] px-3 py-1 text-[#0E7A81] font-medium rounded-xl">Details</button>
+                <button onclick="showdetails('${item.petId}')"  class="border border-[#13131399] px-3 py-1 text-[#0E7A81] font-medium rounded-xl">Details</button>
             </div>
             
         </div>
@@ -129,30 +129,30 @@ const showpetdetails =(ph)=>{
       const petdetailscontainer=document.getElementById("pet_details_container");
       petdetailscontainer.innerHTML=`
     <img class="w-full" src="./images/Rectangle 1.png" alt="">
-    <h3 class="text-lg font-bold">Alessia Max</h3>
+    <h3 class="text-lg font-bold">"${ph.pet_name}"</h3>
     <div class="mt-2 space-y-2 flex flex-row justify-between">
      <div class="flex flex-col space-y-2">
          <div class="flex flex-row gap-2">
              <img src="./images/Frame.jpg" alt="">
-             <p><span>Breed:</span>"${breed}"</p>
+             <p><span>Breed:</span>"${ph.breed}"</p>
          </div>
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (2).png" alt="">
-             <p><span>Gender:</span> "${gender}"</p>
+             <p><span>Gender:</span> "${ph.gender}"</p>
          </div>
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (2).png" alt="">
-             <p><span>Vaccinated status:</span> Partially</p>
+             <p><span>Vaccinated status:</span> "${ph.vaccinated_status}"</p>
          </div>
      </div>
      <div class="flex flex-col space-y-2">
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (1).png" alt="">
-             <p><span>Birth:</span>"${birthDate}"</p>
+             <p><span>Birth:</span>"${ph.birthDate}"</p>
          </div>
          <div class="flex flex-row gap-2">
              <img src="./images/Frame (3).png" alt="">
-             <p><span>Price:</span> "${price}"</p>
+             <p><span>Price:</span> "${ph.price}"</p>
          </div>
      </div>
      
@@ -160,10 +160,10 @@ const showpetdetails =(ph)=>{
  <hr class="mt-2">
  <div class="mt-3">
      <p class="text-xl font-bold">Details Information</p>
- <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-     The point of using is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+ <p>"${ph.pet_details}"</p>
  </div>
-    //  `
+      `
+      showdetailsss.showModal();
 
 }
 
