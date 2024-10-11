@@ -113,6 +113,58 @@ const displayitems = items =>{
 
 
 
+const showdetails=async (id)=>
+{
+    const resp3=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
+    const data3=await resp3.json();
+    const phone=data3.petData;
+    showpetdetails(phone);
 
+}
+
+const showpetdetails =(ph)=>{
+    console.log(ph);
+
+    
+      const petdetailscontainer=document.getElementById("pet_details_container");
+      petdetailscontainer.innerHTML=`
+    <img class="w-full" src="./images/Rectangle 1.png" alt="">
+    <h3 class="text-lg font-bold">Alessia Max</h3>
+    <div class="mt-2 space-y-2 flex flex-row justify-between">
+     <div class="flex flex-col space-y-2">
+         <div class="flex flex-row gap-2">
+             <img src="./images/Frame.jpg" alt="">
+             <p><span>Breed:</span>"${breed}"</p>
+         </div>
+         <div class="flex flex-row gap-2">
+             <img src="./images/Frame (2).png" alt="">
+             <p><span>Gender:</span> "${gender}"</p>
+         </div>
+         <div class="flex flex-row gap-2">
+             <img src="./images/Frame (2).png" alt="">
+             <p><span>Vaccinated status:</span> Partially</p>
+         </div>
+     </div>
+     <div class="flex flex-col space-y-2">
+         <div class="flex flex-row gap-2">
+             <img src="./images/Frame (1).png" alt="">
+             <p><span>Birth:</span>"${birthDate}"</p>
+         </div>
+         <div class="flex flex-row gap-2">
+             <img src="./images/Frame (3).png" alt="">
+             <p><span>Price:</span> "${price}"</p>
+         </div>
+     </div>
+     
+ </div>
+ <hr class="mt-2">
+ <div class="mt-3">
+     <p class="text-xl font-bold">Details Information</p>
+ <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+     The point of using is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+ </div>
+    //  `
+
+}
 
 allpet();
