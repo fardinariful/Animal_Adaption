@@ -9,24 +9,29 @@ const display4Categories = (categories) =>{
     const btncontainer=document.getElementById("button_container");
     categories.forEach(categorys=>{
         console.log(categorys);
-
+     
         const divcontainer=document.createElement('div');
         divcontainer.classList=`flex flex-row justify-between mt-10`;
-        const button1=document.createElement('button');
-        button1.classList=`flex flex-row justify-center items-center gap-3 px-10 py-2 border border-[#0E7A8126] rounded-3xl`;
-        button1.innerHTML=`
-
-        <img class="w-8" src="${categorys.category_icon}" alt="">
+        divcontainer.innerHTML=`
+         <button onclick="loadpetcategory('${categorys.category}')" class="btn flex flex-row justify-center items-center gap-3 px-10 py-2 border border-[#0E7A8126] rounded-3xl"> 
+          <img class="w-8" src="${categorys.category_icon}" alt="">
         "${categorys.category}"
-        `;
-        divcontainer.appendChild(button1);
+         </button> 
+        `
+        
         btncontainer.appendChild(divcontainer);
     })
 }
 
 load4Categories();
 
+const loadpetcategory =async (categro) =>{
+    const resp2= await fetch(`https://openapi.programming-hero.com/api/peddy/category/${categro}`);
+    const data2=await resp2.json();
+    
+    displayitems(data2.data);
 
+}
 const allpet = async() =>{
     const resp = await fetch("https://openapi.programming-hero.com/api/peddy/pets");
     const data=await resp.json();
@@ -38,6 +43,7 @@ const allpet = async() =>{
 const displayitems = items =>{
     //console.log(items);
     const allitems=document.getElementById("all_items");
+    allitems.innerHTML=" ";
     items.forEach(item =>{
         console.log(item);
         
