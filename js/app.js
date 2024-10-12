@@ -122,7 +122,7 @@ const showdetails = async (id) => {
 }
 
 const showpetdetails = (ph) => {
-    console.log(ph);
+    //console.log(ph);
 
 
     const petdetailscontainer = document.getElementById("pet_details_container");
@@ -177,8 +177,21 @@ const likepet = async(id) => {
    //console.log(id);
    const resp4=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
    const data4=await resp4.json();
-   console.log(data4);
+   const DATA=data4.petData;
+   showlike(DATA); 
 }
+
+const showlike =(pet) =>{
+    //console.log(pet);
+    const likebtn=document.getElementById("likebtn1");
+    const divcontainer2=document.createElement('div');
+    divcontainer2.classList="grid grid-cols-2 ";
+    divcontainer2.innerHTML=`
+    <img src="${pet.image}" alt="">
+    `
+    likebtn.appendChild(divcontainer2);
+}
+
 
 // Function to get all "Adopt" buttons
 const getAllAdoptButtons = () => {
