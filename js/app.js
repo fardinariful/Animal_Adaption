@@ -94,7 +94,7 @@ const displayitems = items => {
             </div>
             <hr class="mt-3">
             <div class="flex flex-row justify-between items-center mt-3">
-                <button onclick="likepet()" class="border border-[#13131399] px-3 py-1 rounded-xl">
+                <button onclick="likepet('${item.petId}')" class="border border-[#13131399] px-3 py-1 rounded-xl">
                     <img src="./images/Frame (4).png" alt="">
                 </button>
                 <button  class="adopt-btn border border-[#13131399] px-3 py-1 text-[#0E7A81] font-medium rounded-xl">Adopt</button>
@@ -173,10 +173,12 @@ const showpetdetails = (ph) => {
 
 }
 
-const likepet = () => {
-    console.log("i like it");
+const likepet = async(id) => {
+   //console.log(id);
+   const resp4=await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`);
+   const data4=await resp4.json();
+   console.log(data4);
 }
-
 
 // Function to get all "Adopt" buttons
 const getAllAdoptButtons = () => {
@@ -214,7 +216,7 @@ const handler = () =>
         toggleloading(true);
         setTimeout(() => {
             toggleloading(false); // Hide the spinner after loading finishes
-        }, 500); // Example: Hide after 3 seconds
+        }, 300); // Example: Hide after 3 seconds
 
         
     }
@@ -230,5 +232,7 @@ const handler = () =>
     }
      }
 
+
+     
 
 allpet();
